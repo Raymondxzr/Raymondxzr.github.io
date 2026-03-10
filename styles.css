@@ -166,6 +166,11 @@ h2 {
   line-height: 1.05;
 }
 
+.entry-body h2 {
+  font-size: clamp(1.18rem, 2vw, 1.5rem);
+  margin-bottom: 10px;
+}
+
 .intro,
 .prose p,
 .entry-body p,
@@ -196,6 +201,10 @@ h2 {
 
 .side-note {
   padding-top: 6px;
+}
+
+.life-note {
+  padding-top: 10px;
 }
 
 .plain-list {
