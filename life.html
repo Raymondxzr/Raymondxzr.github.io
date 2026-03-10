@@ -19,9 +19,16 @@
 <body>
   <div class="site-frame">
     <header class="site-header">
-      <div class="site-header-main">
-        <a class="site-name" href="index.html">Zhirui (Raymond) Xia</a>
-        <p class="site-role">AI/ML Engineer and Researcher</p>
+      <div class="header-top">
+        <div class="brand-lockup">
+          <a class="site-name" href="index.html">Zhirui Xia</a>
+          <p class="site-role">AI/ML Engineer and Researcher</p>
+        </div>
+        <div class="site-links" aria-label="External links">
+          <a class="link-pill primary" href="Zhirui_Xia_AIML_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a class="link-pill" href="https://github.com/Raymondxzr" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="link-pill" href="https://www.linkedin.com/in/zhirui-xia/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
       </div>
       <nav class="site-nav" aria-label="Primary">
         <a href="index.html">About</a>
@@ -30,49 +37,51 @@
         <a href="publications.html">Publications</a>
         <a class="active" href="life.html">Life</a>
       </nav>
-      <div class="site-links" aria-label="External links">
-        <a href="https://github.com/Raymondxzr" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/zhirui-xia/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="Zhirui_Xia_AIML_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-      </div>
     </header>
 
-    <main class="page">
-      <p class="page-kicker">Life</p>
-      <h1>Outside of work.</h1>
-      <p class="intro">
-        Outside research and engineering, I try to keep a life that is a little slower, a little more physical,
-        and a little more attentive to the world around me.
-      </p>
+    <main class="page page-life">
+      <section class="page-head">
+        <p class="eyebrow">Life</p>
+        <h1>What keeps me curious.</h1>
+        <p class="page-summary">Travel, photography, and sports that keep life from becoming all screen time.</p>
+      </section>
 
-      <section class="page-columns life-columns">
-        <section class="prose">
+      <section class="life-layout">
+        <div class="life-story">
           <p>
-            Travel is probably the easiest way for me to reset my mind. I like arriving in a new city with no strong agenda,
-            walking for a long time, noticing storefronts, public spaces, street patterns, and the small visual details that
-            make one place feel different from another. Those moments tend to stay with me more than any checklist.
+            Outside research and engineering, I like activities that shift my attention away from code and back toward the physical world.
+            Travel does that best. I like arriving in a new place, walking without too much structure, and noticing architecture,
+            light, signage, transit rhythms, and the small details that make one city feel unlike another.
           </p>
           <p>
-            Photography fits naturally into that. I like taking photos not just to document where I was, but to hold onto a
-            particular feeling of light, texture, or stillness. A lot of the images I enjoy most are quiet ones: corners of a city,
-            reflections, late afternoon shadows, or scenes that feel balanced without trying too hard.
+            Photography fits naturally into that habit. I am less interested in documenting everything than in holding onto a certain atmosphere:
+            late afternoon light, a quiet street, reflections on glass, or the kind of composition that feels balanced without trying too hard.
           </p>
           <p>
-            I also like having sports in my life because they bring a different kind of attention. Badminton gives me speed,
-            rhythm, and fast decision-making; tennis feels more patient and technical, with a satisfying sense of gradual improvement.
-            Both help me stay active and clear-headed, and both are a good counterweight to long hours spent reading, coding, and thinking.
+            I also like having sports in my life because they reset me in a different way. Badminton gives me speed and rhythm;
+            tennis feels more patient and technical. Both are good counterweights to long stretches of reading, coding, and concentrated work.
           </p>
-        </section>
+        </div>
 
-        <aside class="side-note life-note">
-          <h2>A few things I enjoy</h2>
-          <ul class="plain-list">
-            <li>Travel that leaves room for wandering</li>
-            <li>Photography with quiet composition</li>
-            <li>Badminton for speed and rhythm</li>
-            <li>Tennis for patience and form</li>
-          </ul>
-        </aside>
+        <div class="life-mosaic">
+          <article class="mosaic-card wide">
+            <p class="card-label">Travel</p>
+            <h2>Places that change how I look at things</h2>
+            <p>New cities are often where I notice design, motion, and atmosphere most clearly.</p>
+          </article>
+          <article class="mosaic-card">
+            <p class="card-label">Photography</p>
+            <p>Quiet frames, clean geometry, and light worth remembering.</p>
+          </article>
+          <article class="mosaic-card">
+            <p class="card-label">Badminton</p>
+            <p>Fast, precise, and a reliable way to reset.</p>
+          </article>
+          <article class="mosaic-card">
+            <p class="card-label">Tennis</p>
+            <p>More patient, more technical, and satisfying in a different way.</p>
+          </article>
+        </div>
       </section>
     </main>
   </div>

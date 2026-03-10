@@ -19,9 +19,16 @@
 <body>
   <div class="site-frame">
     <header class="site-header">
-      <div class="site-header-main">
-        <a class="site-name" href="index.html">Zhirui (Raymond) Xia</a>
-        <p class="site-role">AI/ML Engineer and Researcher</p>
+      <div class="header-top">
+        <div class="brand-lockup">
+          <a class="site-name" href="index.html">Zhirui Xia</a>
+          <p class="site-role">AI/ML Engineer and Researcher</p>
+        </div>
+        <div class="site-links" aria-label="External links">
+          <a class="link-pill primary" href="Zhirui_Xia_AIML_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a class="link-pill" href="https://github.com/Raymondxzr" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="link-pill" href="https://www.linkedin.com/in/zhirui-xia/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
       </div>
       <nav class="site-nav" aria-label="Primary">
         <a class="active" href="index.html">About</a>
@@ -30,58 +37,69 @@
         <a href="publications.html">Publications</a>
         <a href="life.html">Life</a>
       </nav>
-      <div class="site-links" aria-label="External links">
-        <a href="https://github.com/Raymondxzr" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/zhirui-xia/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="Zhirui_Xia_AIML_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-      </div>
     </header>
 
-    <main class="page page-about">
-      <p class="page-kicker">About</p>
-      <section class="about-hero">
-        <div class="about-hero-copy">
-          <p class="name-kicker">Zhirui (Raymond) Xia</p>
-          <h1 class="about-name">Zhirui Xia</h1>
-          <p class="intro">
-            I am a graduate student in Computer Science at the University of California, San Diego. My interests sit at the intersection of language models,
-            agentic reasoning, retrieval systems, and real-world machine learning deployment.
+    <main class="page page-home">
+      <section class="home-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">About</p>
+          <h1 class="hero-name">Zhirui Xia</h1>
+          <p class="hero-subtitle">Building grounded AI systems with a research mindset and production discipline.</p>
+          <p class="hero-intro">
+            I am a graduate student in Computer Science at UC San Diego. I work on language models, agentic workflows,
+            retrieval systems, and ML infrastructure that is designed to be useful in real settings rather than impressive only in demos.
           </p>
+          <div class="hero-actions">
+            <a class="button primary" href="experience.html">View Experience</a>
+            <a class="button secondary" href="publications.html">View Publications</a>
+          </div>
         </div>
 
-        <aside class="photo-placeholder" aria-label="Photo placeholder">
-          <div class="photo-frame">
+        <aside class="portrait-panel" aria-label="Photo placeholder">
+          <div class="portrait-frame">
             <span>Photo</span>
           </div>
+          <p class="portrait-note">Reserved for a profile photo or portrait.</p>
         </aside>
       </section>
 
-      <div class="page-columns">
-        <section class="prose">
-          <p>
-            I like work that connects research ideas to systems that people can actually use. That includes model behavior,
-            evaluation, tool use, infrastructure, and the details that make an ML product reliable instead of brittle.
-          </p>
-          <p>
-            My recent experience spans LLM-powered storytelling systems at Tencent AI Lab, production web and AI systems at Ai4C,
-            and current research on agentic workflows for weather science. Across all of these, I care about grounded generation,
-            efficient execution, and building interfaces that help complex models do something genuinely useful.
-          </p>
-          <p>
-            I am especially interested in roles and collaborations around LLM systems, scientific AI, multimodal learning,
-            and applied machine learning engineering.
-          </p>
-        </section>
+      <section class="signal-row" aria-label="Focus areas">
+        <div class="signal-item">
+          <span class="signal-label">Focus</span>
+          <strong>LLM systems and agent workflows</strong>
+        </div>
+        <div class="signal-item">
+          <span class="signal-label">Approach</span>
+          <strong>Research depth with product-minded execution</strong>
+        </div>
+        <div class="signal-item">
+          <span class="signal-label">Current Base</span>
+          <strong>UC San Diego, La Jolla</strong>
+        </div>
+      </section>
 
-        <aside class="side-note">
-          <h2>Current Focus</h2>
-          <ul class="plain-list">
-            <li>LLM systems with retrieval, tool use, and evaluation</li>
-            <li>Agentic workflows for scientific reasoning</li>
-            <li>Production-minded ML engineering</li>
+      <section class="content-split">
+        <div class="prose">
+          <p>
+            I like work that sits between modeling, systems, and product thinking. That means caring not only about model quality,
+            but also about interfaces, execution constraints, evaluation, and the details that make an ML system trustworthy and usable.
+          </p>
+          <p>
+            My recent experience includes LLM-driven storytelling systems at Tencent AI Lab, production web and AI systems at Ai4C,
+            and current research on agentic frameworks for weather science. Across these projects, I consistently gravitate toward
+            grounded generation, iterative reasoning, and engineering patterns that can scale beyond a prototype.
+          </p>
+        </div>
+
+        <aside class="sidebar-card">
+          <p class="card-label">Current Focus</p>
+          <ul class="clean-list">
+            <li>LLM products with retrieval and evaluation</li>
+            <li>Tool-using agents for scientific reasoning</li>
+            <li>Production-grade ML systems and interfaces</li>
           </ul>
         </aside>
-      </div>
+      </section>
     </main>
   </div>
 </body>

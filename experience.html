@@ -19,9 +19,16 @@
 <body>
   <div class="site-frame">
     <header class="site-header">
-      <div class="site-header-main">
-        <a class="site-name" href="index.html">Zhirui (Raymond) Xia</a>
-        <p class="site-role">AI/ML Engineer and Researcher</p>
+      <div class="header-top">
+        <div class="brand-lockup">
+          <a class="site-name" href="index.html">Zhirui Xia</a>
+          <p class="site-role">AI/ML Engineer and Researcher</p>
+        </div>
+        <div class="site-links" aria-label="External links">
+          <a class="link-pill primary" href="Zhirui_Xia_AIML_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          <a class="link-pill" href="https://github.com/Raymondxzr" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="link-pill" href="https://www.linkedin.com/in/zhirui-xia/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
       </div>
       <nav class="site-nav" aria-label="Primary">
         <a href="index.html">About</a>
@@ -30,69 +37,82 @@
         <a href="publications.html">Publications</a>
         <a href="life.html">Life</a>
       </nav>
-      <div class="site-links" aria-label="External links">
-        <a href="https://github.com/Raymondxzr" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/zhirui-xia/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="Zhirui_Xia_AIML_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
-      </div>
     </header>
 
     <main class="page">
-      <p class="page-kicker">Experience</p>
-      <h1>Selected experience.</h1>
+      <section class="page-head">
+        <p class="eyebrow">Experience</p>
+        <h1>Work across research and industry.</h1>
+        <p class="page-summary">Recent roles in scientific AI, LLM systems, and production software.</p>
+      </section>
 
-      <section class="entry-list">
-        <article class="entry">
-          <div class="entry-meta">
-            <p>UC San Diego</p>
-            <span>La Jolla · 2024 to present</span>
+      <section class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-date">2024 to present</span>
+            <span class="timeline-place">La Jolla</span>
           </div>
-          <div class="entry-body">
+          <div class="timeline-card">
+            <p class="card-label">UC San Diego</p>
             <h2>Graduate Researcher</h2>
             <p>
               Co-built execution environments and tool APIs for weather-science agents that generate code, run analyses,
-              inspect results, and refine answers through iterative reasoning.
+              inspect intermediate outputs, and refine answers through iterative reasoning.
             </p>
             <p>
-              Designed parts of the synthetic data and evaluation pipeline used to convert weather narratives into verifiable,
-              tool-usable tasks for scientific agent benchmarks.
+              Helped design evaluation and synthetic data pipelines that turn weather narratives into verifiable tasks for scientific agents.
             </p>
+            <div class="tag-row">
+              <span>Scientific AI</span>
+              <span>Agent workflows</span>
+              <span>Execution systems</span>
+            </div>
           </div>
         </article>
 
-        <article class="entry">
-          <div class="entry-meta">
-            <p>Tencent AI Lab</p>
-            <span>Shenzhen · 2024</span>
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-date">2024</span>
+            <span class="timeline-place">Shenzhen</span>
           </div>
-          <div class="entry-body">
+          <div class="timeline-card">
+            <p class="card-label">Tencent AI Lab</p>
             <h2>Machine Learning Engineer Intern</h2>
             <p>
               Built a real-time, multi-stage LLM battle-report pipeline for Honor of Kings, combining event extraction,
-              segment aggregation, grounded generation, and narrative control under time constraints.
+              narrative aggregation, grounded generation, and time-aware commentary.
             </p>
             <p>
-              Worked with GraphRAG, vector retrieval, and model distillation to improve factuality and reduce inference cost
-              while keeping generation quality high enough for live game storytelling.
+              Worked with GraphRAG, vector retrieval, and model distillation to improve factuality while reducing inference cost.
             </p>
+            <div class="tag-row">
+              <span>GraphRAG</span>
+              <span>LLM distillation</span>
+              <span>Real-time serving</span>
+            </div>
           </div>
         </article>
 
-        <article class="entry">
-          <div class="entry-meta">
-            <p>Ai4C Applied Research Institute</p>
-            <span>Guangzhou · 2023</span>
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-date">2023</span>
+            <span class="timeline-place">Guangzhou</span>
           </div>
-          <div class="entry-body">
+          <div class="timeline-card">
+            <p class="card-label">Ai4C Applied Research Institute</p>
             <h2>Software Engineer Intern</h2>
             <p>
-              Owned a customer web portal with a headless backend, GraphQL gateway, and React frontend, with deployment through
-              Docker, GitHub Actions, and Kubernetes.
+              Owned a customer web portal with a headless backend, GraphQL gateway, and React frontend, shipping through Docker,
+              GitHub Actions, and Kubernetes.
             </p>
             <p>
-              Built an LLM assistant that carries short customer conversations and drafts initial proposals using prompt templates,
-              lightweight memory, and retrieval over client profiles and policy documents.
+              Built an LLM assistant that drafts proposal material using prompt templates, lightweight memory, and retrieval over client context.
             </p>
+            <div class="tag-row">
+              <span>React</span>
+              <span>GraphQL</span>
+              <span>Kubernetes</span>
+            </div>
           </div>
         </article>
       </section>
