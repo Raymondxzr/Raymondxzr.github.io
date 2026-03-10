@@ -155,9 +155,9 @@ h2 {
 
 h1 {
   margin: 0;
-  max-width: 14ch;
-  font-size: clamp(3rem, 7vw, 5.6rem);
-  line-height: 0.95;
+  max-width: 12ch;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1;
 }
 
 h2 {
