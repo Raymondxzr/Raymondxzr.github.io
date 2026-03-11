@@ -889,7 +889,7 @@ p {
   .site-frame {
     width: min(100% - 18px, 1100px);
     margin-top: 8px;
-    margin-bottom: 22px;
+    margin-bottom: calc(22px + env(safe-area-inset-bottom, 0px));
   }
 
   .site-header,
@@ -901,51 +901,65 @@ p {
 
   .site-header {
     position: static;
-    gap: 14px;
-    padding-top: 14px;
-    padding-bottom: 14px;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     transition: none;
   }
 
   .header-top {
     display: grid;
-    gap: 12px;
+    gap: 8px;
   }
 
   .brand-lockup {
-    gap: 4px;
+    gap: 2px;
   }
 
   .site-name {
-    font-size: 1.16rem;
+    font-size: 1.08rem;
   }
 
   .site-role {
-    font-size: 0.84rem;
+    font-size: 0.8rem;
   }
 
   .site-links {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    grid-template-columns: minmax(0, 1.15fr) repeat(2, minmax(0, 0.92fr));
+    gap: 6px;
   }
 
   .link-pill {
     justify-content: center;
-    min-height: 40px;
-    padding: 0 10px;
-    font-size: 0.84rem;
+    min-height: 34px;
+    padding: 0 8px;
+    font-size: 0.78rem;
+    box-shadow: none;
+  }
+
+  .link-pill.primary {
+    min-height: 36px;
+    font-size: 0.79rem;
+  }
+
+  .site-links .link-pill:not(.primary) {
+    background: rgba(255, 255, 255, 0.54);
+    font-size: 0.76rem;
   }
 
   .site-nav {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
-    gap: 8px;
+    gap: 6px;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scrollbar-width: none;
     white-space: nowrap;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .site-nav::-webkit-scrollbar {
@@ -953,7 +967,9 @@ p {
   }
 
   .site-nav a {
-    font-size: 0.9rem;
+    flex-shrink: 0;
+    padding: 6px 10px;
+    font-size: 0.84rem;
   }
 
   .site-header.is-condensed .site-role,
@@ -964,8 +980,8 @@ p {
 
   .page {
     margin-top: 16px;
-    padding-top: 22px;
-    padding-bottom: 26px;
+    padding-top: 20px;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
   }
 
   .hero-name {
@@ -982,11 +998,16 @@ p {
   .page-head-split,
   .life-layout,
   .timeline-item {
-    gap: 16px;
+    gap: 14px;
+  }
+
+  .page-head {
+    margin-bottom: 26px;
   }
 
   .portrait-panel {
     justify-items: stretch;
+    gap: 10px;
   }
 
   .portrait-frame,
@@ -994,23 +1015,86 @@ p {
     width: 100%;
   }
 
-  .signal-row {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 86%;
-    gap: 12px;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scrollbar-width: none;
-    padding-bottom: 2px;
+  .portrait-frame {
+    max-width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 24px;
   }
 
-  .signal-row::-webkit-scrollbar {
-    display: none;
+  .identity-graphic::after {
+    inset: 12px;
+    border-radius: 18px;
+  }
+
+  .identity-copy {
+    max-width: none;
+  }
+
+  .portrait-note {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .hero-subtitle {
+    margin-top: 12px;
+    font-size: 1.04rem;
+  }
+
+  .hero-intro {
+    margin-top: 16px;
+    font-size: 0.97rem;
+    line-height: 1.66;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .button {
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 0.88rem;
+  }
+
+  .signal-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 22px;
   }
 
   .signal-item {
-    min-height: 132px;
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .signal-item strong {
+    font-size: 0.95rem;
+    line-height: 1.42;
+  }
+
+  .content-split {
+    margin-top: 24px;
+  }
+
+  .prose p,
+  .timeline-card p,
+  .feature-card p,
+  .paper-card p,
+  .mosaic-card p,
+  .card-meta,
+  .sidebar-card li {
+    line-height: 1.64;
+  }
+
+  .prose p,
+  .life-story p {
+    margin-bottom: 14px;
+    font-size: 0.97rem;
   }
 
   .timeline-meta {
@@ -1037,6 +1121,16 @@ p {
   .photo-card,
   .photo-card-featured {
     min-height: 0;
+  }
+
+  .sidebar-card,
+  .timeline-card,
+  .feature-card,
+  .paper-card,
+  .mosaic-card,
+  .coursework-band,
+  .photo-card {
+    padding: 18px;
   }
 
   .mosaic-card {
