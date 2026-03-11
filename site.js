@@ -1,14 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.documentElement;
   const header = document.querySelector(".site-header");
-  const sentinel = document.querySelector(".header-sentinel");
   const mobileQuery = window.matchMedia("(max-width: 640px)");
 
-  if (!header || !sentinel) {
+  if (!header) {
     return;
   }
-
-  let isStuck = false;
 
   const syncHeaderOffset = () => {
     if (mobileQuery.matches) {
@@ -21,74 +18,22 @@ document.addEventListener("DOMContentLoaded", () => {
     root.style.setProperty("--header-offset", `${headerHeight + topOffset + 12}px`);
   };
 
-  const applyStickyState = (nextState) => {
-    if (nextState === isStuck) {
-      syncHeaderOffset();
-      return;
-    }
-
-    isStuck = nextState;
-    header.classList.toggle("is-stuck", isStuck);
-    syncHeaderOffset();
-  };
-
-  const updateStickyStateFallback = () => {
-    if (mobileQuery.matches) {
-      applyStickyState(false);
-      return;
-    }
-
-    applyStickyState(window.scrollY > 72);
-  };
-
-  applyStickyState(false);
-
   if (typeof ResizeObserver !== "undefined") {
     const resizeObserver = new ResizeObserver(syncHeaderOffset);
     resizeObserver.observe(header);
   }
 
-  let observer = null;
-  const attachStickyObserver = () => {
-    if (observer) {
-      observer.disconnect();
-      observer = null;
-    }
-
-    if (mobileQuery.matches) {
-      applyStickyState(false);
-      return;
-    }
-
-    if (typeof IntersectionObserver === "undefined") {
-      updateStickyStateFallback();
-      return;
-    }
-
-    observer = new IntersectionObserver(
-      ([entry]) => {
-        applyStickyState(!entry.isIntersecting);
-      },
-      {
-        threshold: 0,
-        rootMargin: "-72px 0px 0px 0px",
-      }
-    );
-
-    observer.observe(sentinel);
-    syncHeaderOffset();
+  const requestOffsetSync = () => {
+    window.requestAnimationFrame(syncHeaderOffset);
   };
 
   if (typeof mobileQuery.addEventListener === "function") {
-    mobileQuery.addEventListener("change", attachStickyObserver);
+    mobileQuery.addEventListener("change", requestOffsetSync);
   } else if (typeof mobileQuery.addListener === "function") {
-    mobileQuery.addListener(attachStickyObserver);
+    mobileQuery.addListener(requestOffsetSync);
   }
 
-  window.addEventListener("resize", attachStickyObserver, { passive: true });
-  if (typeof IntersectionObserver === "undefined") {
-    window.addEventListener("scroll", updateStickyStateFallback, { passive: true });
-  }
-
-  attachStickyObserver();
+  window.addEventListener("resize", requestOffsetSync, { passive: true });
+  window.addEventListener("load", requestOffsetSync, { passive: true });
+  requestOffsetSync();
 });

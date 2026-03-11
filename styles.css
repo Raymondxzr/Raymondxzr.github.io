@@ -24,7 +24,7 @@
   --space-6: 24px;
   --space-8: 32px;
   --space-10: 40px;
-  --header-offset: 128px;
+  --header-offset: 132px;
 }
 
 *,
@@ -75,10 +75,6 @@ a {
   margin: 22px auto 40px;
 }
 
-.header-sentinel {
-  height: 1px;
-}
-
 .skip-link {
   position: absolute;
   left: 16px;
@@ -98,31 +94,16 @@ a {
 
 .site-header {
   position: sticky;
-  top: 10px;
+  top: 8px;
   z-index: 20;
   display: grid;
-  gap: var(--space-3);
-  padding: 14px 18px;
+  gap: 10px;
+  padding: 12px 16px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(255, 252, 247, 0.92), rgba(255, 247, 239, 0.76));
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
-  transition:
-    gap 0.18s ease,
-    padding 0.18s ease,
-    border-radius 0.18s ease,
-    background-color 0.18s ease,
-    box-shadow 0.18s ease,
-    transform 0.18s ease;
-}
-
-.site-header.is-stuck {
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 20px;
-  background: linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(255, 248, 241, 0.86));
-  box-shadow: 0 12px 28px rgba(77, 57, 36, 0.09);
 }
 
 .header-top {
@@ -148,12 +129,6 @@ a {
   margin: 0;
   color: var(--muted);
   font-size: 0.9rem;
-  transition: font-size 0.18s ease, opacity 0.18s ease;
-}
-
-.site-header.is-stuck .site-role {
-  font-size: 0.8rem;
-  opacity: 0.82;
 }
 
 .site-links {
@@ -161,32 +136,21 @@ a {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: var(--space-2);
-  transition: gap 0.18s ease;
-}
-
-.site-header.is-stuck .site-links {
-  gap: 6px;
 }
 
 .link-pill {
   display: inline-flex;
   align-items: center;
-  min-height: 38px;
-  padding: 0 15px;
+  min-height: 36px;
+  padding: 0 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.64);
   box-shadow: var(--shadow-sm);
   text-decoration: none;
-  font-size: 0.91rem;
+  font-size: 0.89rem;
   font-weight: 500;
   transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
-}
-
-.site-header.is-stuck .link-pill {
-  min-height: 31px;
-  padding: 0 11px;
-  font-size: 0.84rem;
 }
 
 .link-pill.primary {
@@ -205,29 +169,18 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  padding-top: 8px;
+  padding-top: 6px;
   border-top: 1px solid rgba(29, 35, 44, 0.08);
-  transition: padding-top 0.18s ease, gap 0.18s ease;
-}
-
-.site-header.is-stuck .site-nav {
-  gap: 4px;
-  padding-top: 4px;
 }
 
 .site-nav a {
   position: relative;
-  padding: 8px 12px;
+  padding: 7px 11px;
   border-radius: 999px;
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.91rem;
   transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
-}
-
-.site-header.is-stuck .site-nav a {
-  padding: 6px 9px;
-  font-size: 0.87rem;
 }
 
 .site-nav a:hover {
