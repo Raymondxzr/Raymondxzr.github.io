@@ -726,6 +726,52 @@ p {
   gap: 24px;
 }
 
+.life-visuals {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(0, 0.7fr));
+  gap: 14px;
+  margin: 0 0 28px;
+}
+
+.photo-card {
+  position: relative;
+  min-height: 180px;
+  padding: 22px;
+  border: 1px dashed rgba(195, 90, 61, 0.28);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(180deg, rgba(255, 251, 247, 0.95), rgba(255, 244, 236, 0.78)),
+    radial-gradient(circle at top right, rgba(195, 90, 61, 0.1), transparent 45%);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.photo-card::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: calc(var(--radius-md) - 8px);
+  pointer-events: none;
+}
+
+.photo-card h2 {
+  max-width: 14ch;
+  margin-bottom: 10px;
+}
+
+.photo-card p:last-child {
+  max-width: 28ch;
+  margin-bottom: 0;
+}
+
+.photo-card-featured {
+  min-height: 220px;
+  background:
+    linear-gradient(180deg, rgba(255, 247, 239, 0.98), rgba(255, 239, 229, 0.84)),
+    radial-gradient(circle at top right, rgba(195, 90, 61, 0.16), transparent 46%);
+}
+
 .life-story p {
   max-width: 62ch;
   margin-bottom: 18px;
@@ -735,14 +781,29 @@ p {
 }
 
 .life-quote {
-  margin: 28px 0 0;
-  padding: 20px 22px;
-  border-left: 3px solid rgba(195, 90, 61, 0.42);
-  background: rgba(255, 248, 241, 0.72);
+  position: relative;
+  margin: 34px 0 0;
+  padding: 28px 28px 24px;
+  border: 1px solid rgba(195, 90, 61, 0.16);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(180deg, rgba(255, 249, 243, 0.9), rgba(255, 243, 233, 0.72)),
+    linear-gradient(90deg, rgba(195, 90, 61, 0.08), transparent 50%);
   color: var(--accent-deep);
   font-family: "Source Serif 4", serif;
-  font-size: 1.36rem;
-  line-height: 1.35;
+  font-size: 1.42rem;
+  line-height: 1.32;
+  box-shadow: var(--shadow-sm);
+}
+
+.life-quote::before {
+  content: "“";
+  position: absolute;
+  top: 10px;
+  left: 18px;
+  color: rgba(195, 90, 61, 0.26);
+  font-size: 4rem;
+  line-height: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -775,6 +836,18 @@ p {
   min-height: 170px;
 }
 
+.life-closing {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(131, 104, 78, 0.14);
+}
+
+.life-closing p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
 .mosaic-card p:last-child {
   margin-bottom: 0;
 }
@@ -801,6 +874,7 @@ p {
   .signal-row,
   .education-grid,
   .papers-grid,
+  .life-visuals,
   .life-mosaic {
     grid-template-columns: 1fr;
   }
@@ -957,6 +1031,11 @@ p {
 
   .paper-card.featured,
   .mosaic-card.wide {
+    min-height: 0;
+  }
+
+  .photo-card,
+  .photo-card-featured {
     min-height: 0;
   }
 
