@@ -75,6 +75,10 @@ a {
   margin: 22px auto 40px;
 }
 
+.header-sentinel {
+  height: 1px;
+}
+
 .skip-link {
   position: absolute;
   left: 16px;

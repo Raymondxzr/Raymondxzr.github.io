@@ -1,16 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.documentElement;
   const header = document.querySelector(".site-header");
+  const sentinel = document.querySelector(".header-sentinel");
   const mobileQuery = window.matchMedia("(max-width: 640px)");
 
-  if (!header) {
+  if (!header || !sentinel) {
     return;
   }
 
   let isStuck = false;
-  let ticking = false;
-  const ENTER_THRESHOLD = 72;
-  const EXIT_THRESHOLD = 28;
 
   const syncHeaderOffset = () => {
     if (mobileQuery.matches) {
@@ -24,43 +22,23 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const applyStickyState = (nextState) => {
+    if (nextState === isStuck) {
+      syncHeaderOffset();
+      return;
+    }
+
     isStuck = nextState;
     header.classList.toggle("is-stuck", isStuck);
     syncHeaderOffset();
   };
 
-  const updateStickyState = () => {
+  const updateStickyStateFallback = () => {
     if (mobileQuery.matches) {
       applyStickyState(false);
-      ticking = false;
       return;
     }
 
-    const y = window.scrollY;
-    let nextState = isStuck;
-
-    if (!isStuck && y > ENTER_THRESHOLD) {
-      nextState = true;
-    } else if (isStuck && y < EXIT_THRESHOLD) {
-      nextState = false;
-    }
-
-    if (nextState !== isStuck) {
-      applyStickyState(nextState);
-    } else {
-      syncHeaderOffset();
-    }
-
-    ticking = false;
-  };
-
-  const requestStickyUpdate = () => {
-    if (ticking) {
-      return;
-    }
-
-    ticking = true;
-    window.requestAnimationFrame(updateStickyState);
+    applyStickyState(window.scrollY > 72);
   };
 
   applyStickyState(false);
@@ -70,13 +48,47 @@ document.addEventListener("DOMContentLoaded", () => {
     resizeObserver.observe(header);
   }
 
+  let observer = null;
+  const attachStickyObserver = () => {
+    if (observer) {
+      observer.disconnect();
+      observer = null;
+    }
+
+    if (mobileQuery.matches) {
+      applyStickyState(false);
+      return;
+    }
+
+    if (typeof IntersectionObserver === "undefined") {
+      updateStickyStateFallback();
+      return;
+    }
+
+    observer = new IntersectionObserver(
+      ([entry]) => {
+        applyStickyState(!entry.isIntersecting);
+      },
+      {
+        threshold: 0,
+        rootMargin: "-72px 0px 0px 0px",
+      }
+    );
+
+    observer.observe(sentinel);
+    syncHeaderOffset();
+  };
+
   if (typeof mobileQuery.addEventListener === "function") {
-    mobileQuery.addEventListener("change", requestStickyUpdate);
+    mobileQuery.addEventListener("change", attachStickyObserver);
   } else if (typeof mobileQuery.addListener === "function") {
-    mobileQuery.addListener(requestStickyUpdate);
+    mobileQuery.addListener(attachStickyObserver);
   }
 
-  window.addEventListener("resize", requestStickyUpdate, { passive: true });
-  window.addEventListener("scroll", requestStickyUpdate, { passive: true });
-  requestStickyUpdate();
+  window.addEventListener("resize", attachStickyObserver, { passive: true });
+  if (typeof IntersectionObserver === "undefined") {
+    window.addEventListener("scroll", updateStickyStateFallback, { passive: true });
+  }
+
+  attachStickyObserver();
 });
