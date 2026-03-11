@@ -104,6 +104,20 @@ a {
   background: linear-gradient(180deg, rgba(255, 252, 247, 0.92), rgba(255, 247, 239, 0.76));
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
+  transition:
+    padding 180ms ease,
+    gap 180ms ease,
+    border-radius 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.site-header.is-condensed {
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(255, 248, 241, 0.86));
+  box-shadow: 0 12px 26px rgba(77, 57, 36, 0.08);
 }
 
 .header-top {
@@ -129,6 +143,12 @@ a {
   margin: 0;
   color: var(--muted);
   font-size: 0.9rem;
+  transition: font-size 180ms ease, opacity 180ms ease;
+}
+
+.site-header.is-condensed .site-role {
+  font-size: 0.82rem;
+  opacity: 0.84;
 }
 
 .site-links {
@@ -136,6 +156,11 @@ a {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: var(--space-2);
+  transition: gap 180ms ease;
+}
+
+.site-header.is-condensed .site-links {
+  gap: 6px;
 }
 
 .link-pill {
@@ -150,7 +175,19 @@ a {
   text-decoration: none;
   font-size: 0.89rem;
   font-weight: 500;
-  transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    min-height 180ms ease,
+    padding 180ms ease,
+    font-size 180ms ease;
+}
+
+.site-header.is-condensed .link-pill {
+  min-height: 31px;
+  padding: 0 11px;
+  font-size: 0.83rem;
 }
 
 .link-pill.primary {
@@ -171,6 +208,12 @@ a {
   gap: var(--space-2);
   padding-top: 6px;
   border-top: 1px solid rgba(29, 35, 44, 0.08);
+  transition: gap 180ms ease, padding-top 180ms ease;
+}
+
+.site-header.is-condensed .site-nav {
+  gap: 4px;
+  padding-top: 4px;
 }
 
 .site-nav a {
@@ -180,7 +223,17 @@ a {
   color: var(--muted);
   text-decoration: none;
   font-size: 0.91rem;
-  transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease,
+    padding 180ms ease,
+    font-size 180ms ease;
+}
+
+.site-header.is-condensed .site-nav a {
+  padding: 6px 9px;
+  font-size: 0.86rem;
 }
 
 .site-nav a:hover {
@@ -777,6 +830,7 @@ p {
     gap: 14px;
     padding-top: 14px;
     padding-bottom: 14px;
+    transition: none;
   }
 
   .header-top {
@@ -826,6 +880,12 @@ p {
 
   .site-nav a {
     font-size: 0.9rem;
+  }
+
+  .site-header.is-condensed .site-role,
+  .site-header.is-condensed .link-pill,
+  .site-header.is-condensed .site-nav a {
+    font-size: inherit;
   }
 
   .page {
