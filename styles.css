@@ -804,32 +804,146 @@ p {
 @media (max-width: 640px) {
   .site-frame {
     width: min(100% - 18px, 1100px);
-    margin-top: 10px;
+    margin-top: 8px;
     margin-bottom: 22px;
   }
 
   .site-header,
   .page {
-    padding-left: 18px;
-    padding-right: 18px;
-    border-radius: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 22px;
   }
 
   .site-header {
     position: static;
+    gap: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .header-top {
+    display: grid;
+    gap: 12px;
+  }
+
+  .brand-lockup {
+    gap: 4px;
+  }
+
+  .site-name {
+    font-size: 1.16rem;
+  }
+
+  .site-role {
+    font-size: 0.84rem;
+  }
+
+  .site-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .link-pill {
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 10px;
+    font-size: 0.84rem;
+  }
+
+  .site-nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav a {
+    font-size: 0.9rem;
+  }
+
+  .page {
+    margin-top: 16px;
+    padding-top: 22px;
+    padding-bottom: 26px;
   }
 
   .hero-name {
-    font-size: clamp(3rem, 14vw, 4.7rem);
+    font-size: clamp(2.8rem, 14vw, 4.4rem);
   }
 
   h1 {
-    font-size: clamp(2rem, 10vw, 3.4rem);
+    font-size: clamp(1.9rem, 10vw, 3rem);
     max-width: none;
   }
 
-  .hero-actions,
-  .site-links {
-    gap: 8px;
+  .home-hero,
+  .content-split,
+  .page-head-split,
+  .life-layout,
+  .timeline-item {
+    gap: 16px;
+  }
+
+  .portrait-panel {
+    justify-items: stretch;
+  }
+
+  .portrait-frame,
+  .identity-copy {
+    width: 100%;
+  }
+
+  .signal-row {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 86%;
+    gap: 12px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .signal-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .signal-item {
+    min-height: 132px;
+  }
+
+  .timeline-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 0 4px 14px;
+  }
+
+  .timeline-meta::before {
+    top: 2px;
+    bottom: 2px;
+  }
+
+  .timeline-place {
+    margin-top: 0;
+  }
+
+  .paper-card.featured,
+  .mosaic-card.wide {
+    min-height: 0;
+  }
+
+  .mosaic-card {
+    min-height: 150px;
   }
 }
