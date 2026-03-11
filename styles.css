@@ -354,8 +354,8 @@ p {
 
 .home-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.72fr);
-  gap: 34px;
+  grid-template-columns: minmax(0, 1.52fr) minmax(220px, 0.6fr);
+  gap: 30px;
   align-items: start;
 }
 
@@ -411,11 +411,12 @@ p {
   display: grid;
   gap: 14px;
   justify-items: end;
+  align-self: start;
 }
 
 .portrait-frame {
-  width: min(100%, 320px);
-  aspect-ratio: 4 / 5;
+  width: min(100%, 288px);
+  aspect-ratio: 10 / 11;
   display: flex;
   align-items: center;
   justify-content: center;
