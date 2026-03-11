@@ -1,25 +1,27 @@
 # Zhirui Xia Personal Website
 
-This repository contains a static personal website for GitHub Pages.
+Personal website of Zhirui Xia, focused on AI/ML systems, research, publications, and selected personal interests.
 
-## Files
+Live site:
 
-- `index.html`: homepage
-- `styles.css`: site styling
-- `Zhirui_Xia_AIML_Resume.pdf`: resume
+`https://raymondxzr.github.io/`
 
-## Deploy to GitHub Pages
+Repository:
 
-1. Create a repository named `<your-github-username>.github.io`.
-2. Upload the files in this directory to the repository root.
-3. Commit and push to the `main` branch.
-4. In GitHub, open `Settings -> Pages` and ensure the site is deployed from the default branch root if needed.
+`https://github.com/Raymondxzr/Raymondxzr.github.io`
 
-Your site will be available at:
+## Structure
 
-`https://<your-github-username>.github.io/`
+- `index.html`: About page
+- `experience.html`: experience timeline
+- `education.html`: education page
+- `publications.html`: publications and research
+- `life.html`: personal interests page
+- `styles.css`: shared styles
+- `site.js`: shared sticky-header behavior
 
 ## Notes
 
 - The site is fully static and does not require a build step.
 - The local `mysite/` virtual environment is excluded from version control.
+- Share previews are driven by `favicon.svg` and `social-preview.svg`.
