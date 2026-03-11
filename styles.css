@@ -104,6 +104,21 @@ a {
   background: linear-gradient(180deg, rgba(255, 252, 247, 0.92), rgba(255, 247, 239, 0.76));
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
+  transition:
+    gap 0.18s ease,
+    padding 0.18s ease,
+    border-radius 0.18s ease,
+    background-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.site-header.is-stuck {
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(255, 248, 241, 0.86));
+  box-shadow: 0 14px 32px rgba(77, 57, 36, 0.1);
 }
 
 .header-top {
@@ -129,6 +144,12 @@ a {
   margin: 0;
   color: var(--muted);
   font-size: 0.9rem;
+  transition: font-size 0.18s ease, opacity 0.18s ease;
+}
+
+.site-header.is-stuck .site-role {
+  font-size: 0.84rem;
+  opacity: 0.9;
 }
 
 .site-links {
@@ -136,6 +157,11 @@ a {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: var(--space-2);
+  transition: gap 0.18s ease;
+}
+
+.site-header.is-stuck .site-links {
+  gap: 6px;
 }
 
 .link-pill {
@@ -151,6 +177,12 @@ a {
   font-size: 0.91rem;
   font-weight: 500;
   transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.site-header.is-stuck .link-pill {
+  min-height: 34px;
+  padding: 0 13px;
+  font-size: 0.88rem;
 }
 
 .link-pill.primary {
@@ -171,6 +203,12 @@ a {
   gap: var(--space-2);
   padding-top: 8px;
   border-top: 1px solid rgba(29, 35, 44, 0.08);
+  transition: padding-top 0.18s ease, gap 0.18s ease;
+}
+
+.site-header.is-stuck .site-nav {
+  gap: 6px;
+  padding-top: 6px;
 }
 
 .site-nav a {
@@ -181,6 +219,11 @@ a {
   text-decoration: none;
   font-size: 0.95rem;
   transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.site-header.is-stuck .site-nav a {
+  padding: 7px 11px;
+  font-size: 0.91rem;
 }
 
 .site-nav a:hover {
