@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title desc">
+  <title id="title">Zhirui Xia profile mark</title>
+  <desc id="desc">Abstract warm gradient profile mark with the initials ZX.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#a8b1bd"/>
+      <stop offset="0.48" stop-color="#f0c7bf"/>
+      <stop offset="1" stop-color="#d8c4ad"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="32%" cy="25%" r="70%">
+      <stop offset="0" stop-color="#fff8ee" stop-opacity="0.9"/>
+      <stop offset="0.45" stop-color="#f4d4dc" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#191716" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" rx="112" fill="url(#bg)"/>
+  <rect width="400" height="400" rx="112" fill="url(#glow)"/>
+  <path d="M54 293c50-83 108-121 174-113 51 6 91-16 119-67 9 79-19 138-84 177-64 38-134 39-209 3Z" fill="#191716" opacity="0.16"/>
+  <circle cx="298" cy="104" r="42" fill="#fff7ec" opacity="0.46"/>
+  <text x="200" y="230" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="112" font-weight="700" letter-spacing="-10" fill="#191716">ZX</text>
+</svg>
